@@ -1,0 +1,500 @@
+@font-face {
+  font-family: "Anderson 1938";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://satchel.rei.com/media/font/anderson_1938-webfont.eot?#iefix") format("embedded-opentype"), url("https://satchel.rei.com/media/font/anderson_1938-webfont.woff") format("woff"), url("https://satchel.rei.com/media/font/anderson_1938-webfont.ttf") format("truetype"), url("https://satchel.rei.com/media/font/anderson_1938-webfont.svg#webfont") format("svg"); }
+
+body {
+  font-family: "Anderson 1938";
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important; }
+
+#upCount {
+  color: #a1c900; }
+
+#upNavTitle {
+  display: inline-block;
+  margin: 20px 0 0 20px;
+  color: white; }
+
+.upContainer {
+  border: 3px solid black;
+  width: 100%;
+  background-color: white; }
+
+.upHeader, .uploadBtnP, .upImgHeader {
+  width: 100%;
+  color: #a1c900;
+  background-color: black;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 175%;
+  font-weight: bold; }
+
+.appList {
+  cursor: pointer; }
+  .appList:hover {
+    background-color: lightgray;
+    font-weight: bold; }
+
+/*@include myBorder;*/
+[draggable="true"] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /*support old versions of WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element; }
+
+.upGlobalProps {
+  width: 95%;
+  margin: 0 auto; }
+  .upGlobalProps p {
+    font-size: 125%;
+    margin-top: 2px; }
+  .upGlobalProps .upProps div {
+    width: 50%;
+    margin: 4px 0;
+    height: 30px;
+    float: left; }
+  .upGlobalProps .upProps div > select {
+    width: 100%; }
+
+#skuMetadata {
+  width: 100%;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s; }
+  #skuMetadata div {
+    font-size: 120%; }
+  #skuMetadata .upcRadio {
+    margin-left: 2%; }
+  #skuMetadata .upcFetchDiv {
+    margin: 0 auto;
+    text-align: center; }
+    #skuMetadata .upcFetchDiv span {
+      margin-left: 1%; }
+    #skuMetadata .upcFetchDiv #fetchText {
+      width: 40%; }
+    #skuMetadata .upcFetchDiv #uploadBtn {
+      margin-left: 5%;
+      width: 15%; }
+    #skuMetadata .upcFetchDiv #fetchButton {
+      margin-right: 5%; }
+
+.upFormControl {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+
+.upFormControl:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+.upcDataDiv {
+  width: 90%;
+  margin: 0 auto; }
+  .upcDataDiv .upcSubLeft {
+    width: 59%;
+    display: inline-block; }
+  .upcDataDiv .upcSubRight {
+    width: 39%;
+    display: inline-block; }
+
+#globalMetadata, #mainImgContainer {
+  border-radius: 5px; }
+
+#globalMetadata, #imagesDiv, #mainImgContainer {
+  height: inherit;
+  min-height: 662px; }
+
+.selImgDiv {
+  height: 400px;
+  overflow: hidden; }
+
+.upStudioProps {
+  height: 400px; }
+
+#target {
+  overflow: auto;
+  width: 100%;
+  height: 660px;
+  max-height: 612px;
+  /*todo use media queries for height */
+  /*todo height of page is increased when adding many images */ }
+
+#metadata {
+  width: 97.5%;
+  float: right;
+  overflow: auto;
+  height: 85%;
+  max-height: 605px; }
+
+#options {
+  height: 100%; }
+
+.upImgThumbDiv {
+  border-bottom: 2px solid gray;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  width: 100%;
+  padding: 5%;
+  height: 120px;
+  margin: 0;
+  -webkit-transition: border 0.15s;
+  transition: border 0.15s;
+  /*transition: all .5s ease;
+  -webkit-transition: all .5s ease;*/ }
+  .upImgThumbDiv img {
+    margin: 0 auto;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    image-orientation: from-image; }
+
+.upHighlight {
+  border: 2px solid #8db000; }
+
+/*
+.imgThumbnail {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+*/
+#upSelectedImg {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 65px;
+  object-fit: contain;
+  padding-top: 20px;
+  background-color: #f1f1f1; }
+
+.bulkUploadP {
+  font-size: 300%;
+  text-align: center;
+  margin: 140px 150px 0 150px;
+  color: #a1c900;
+  border: 2px solid black;
+  border-radius: 5px; }
+
+.bulkUploadP2 {
+  font-size: 200%;
+  text-align: center;
+  margin-top: 30px;
+  color: black; }
+
+.upImgHeader {
+  margin-bottom: 0; }
+
+.uploadBtnP {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0; }
+
+.upBtn {
+  color: black;
+  border: black;
+  margin: 0 auto;
+  font-size: 90%; }
+
+.deactBtn {
+  background-color: gray; }
+
+.activeBtn {
+  background-color: #a1c900; }
+
+#imagesDiv {
+  border: 3px solid black;
+  border-radius: 5px;
+  position: relative; }
+
+.drag, .over {
+  border: 2px solid #a1c900;
+  background-color: #bdff58;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s; }
+
+.upDefault {
+  color: gray; }
+
+.upWarning {
+  /*box-shadow: inset 0 0 10px #d9534f;*/
+  background-color: #d9534f; }
+
+#wsMessage {
+  width: 50%;
+  min-width: 500px;
+  height: 0;
+  top: 0;
+  left: 25%;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden; }
+
+#wsMessage p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 120%; }
+
+/*
+#wsMessageButton {
+  margin-left: 10px;
+}
+*/
+#wsMessageClose {
+  float: left;
+  width: 5%;
+  margin-top: 12px; }
+
+#wsPars {
+  width: 95%;
+  float: left; }
+
+#removeImage, #imgException {
+  color: gray;
+  float: right;
+  margin-right: 12px;
+  margin-top: 5px;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s; }
+  #removeImage:hover, #imgException:hover {
+    color: red;
+    background-color: pink; }
+
+#uploadedDiv {
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  background-color: #f1f1f1;
+  margin-top: 30px;
+  overflow: hidden; }
+
+#uploadedImgDiv {
+  width: auto;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap; }
+  #uploadedImgDiv a div {
+    display: inline-block;
+    margin-left: 20px;
+    width: 148px;
+    height: 148px; }
+    #uploadedImgDiv a div img {
+      margin: 0 auto;
+      display: block;
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain; }
+    #uploadedImgDiv a div p {
+      margin-top: 5px;
+      text-align: center; }
+
+/*
+#uploadedClose {
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  color: gray;
+  transition: color 0.25s;
+  font-size: 90%;
+
+  &:hover {
+    color: $reiGreen;
+  }
+}
+*/
+/*spinner*/
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em; }
+
+.loader {
+  margin: 0 auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(191, 239, 3, 0.2);
+  border-right: 1.1em solid rgba(191, 239, 3, 0.2);
+  border-bottom: 1.1em solid rgba(191, 239, 3, 0.2);
+  border-left: 1.1em solid #bfef03;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear; }
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/*/spinner*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+/* USAGE
+<div class="row">
+  <div class="row-height">
+    <div class="col-xs-2 col-xs-height col-xs-middle">
+      <div class="inside"></div>
+    </div>
+    <div class="col-xs-4 col-lg-5 col-xs-height col-xs-middle">
+      <div class="inside"></div>
+    </div>
+  </div>
+</div>
+http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height
+*/
+/* content styles */
+.inside {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+  background: -ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%); }
+
+.inside-full-height {
+  /*
+  // if you want to give content full height give him height: 100%;
+  // with content full height you can't apply margins to the content
+  // content full height does not work in ie http://stackoverflow.com/questions/27384433/ie-display-table-cell-child-ignores-height-100
+  */
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+/* columns of same height styles */
+.row-height {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%; }
+
+.col-height {
+  display: table-cell;
+  float: none;
+  height: 100%; }
+
+.col-top {
+  vertical-align: top; }
+
+.col-middle {
+  vertical-align: middle; }
+
+.col-bottom {
+  vertical-align: bottom; }
+
+@media (min-width: 480px) {
+  .row-xs-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%; }
+  .col-xs-height {
+    display: table-cell;
+    float: none;
+    height: 100%; }
+  .col-xs-top {
+    vertical-align: top; }
+  .col-xs-middle {
+    vertical-align: middle; }
+  .col-xs-bottom {
+    vertical-align: bottom; } }
+
+@media (min-width: 768px) {
+  .row-sm-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%; }
+  .col-sm-height {
+    display: table-cell;
+    float: none;
+    height: 100%; }
+  .col-sm-top {
+    vertical-align: top; }
+  .col-sm-middle {
+    vertical-align: middle; }
+  .col-sm-bottom {
+    vertical-align: bottom; } }
+
+@media (min-width: 992px) {
+  .row-md-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%; }
+  .col-md-height {
+    display: table-cell;
+    float: none;
+    height: 100%; }
+  .col-md-top {
+    vertical-align: top; }
+  .col-md-middle {
+    vertical-align: middle; }
+  .col-md-bottom {
+    vertical-align: bottom; } }
+
+@media (min-width: 1200px) {
+  .row-lg-height {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%; }
+  .col-lg-height {
+    display: table-cell;
+    float: none;
+    height: 100%; }
+  .col-lg-top {
+    vertical-align: top; }
+  .col-lg-middle {
+    vertical-align: middle; }
+  .col-lg-bottom {
+    vertical-align: bottom; } }
+
+#shutdownBtn {
+  background-color: black;
+  color: #9d9d9d;
+  border: 1px solid #a1c900;
+  margin-top: 10px;
+  line-height: 15px;
+  box-sizing: border-box;
+  float: right;
+  font-family: "Anderson 1938";
+  font-size: 14px !important; }
+  #shutdownBtn:hover {
+    color: white;
+    background-color: #1a1a1a; }
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  #shutdownBtn {
+    float: left;
+    margin-left: 15px; } }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>ImageTest</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link th:href="@{css/index.css?v=1}" href="../static/css/index.css" rel="stylesheet" />
+
+    <script id="imgThumbTemplate" type="text/x-handlebars-template">
+        <div class="upImgThumbDiv" data-id="{{name}}">
+            <div class="loader"></div>
+            <!--<img class="imgThumbnail" data-name="{{name}}" src="{{imgSrc}}" />-->
+        </div>
+    </script>
+
+</head>
+<body style="background: url('../static/img/gtk-bg.jpg')" th:style="'background: url(' + @{img/gtk-bg.jpg} + ');'">
+
+<div id="wsMessage" class="alert-success"><div id="wsPars"></div><span id="wsMessageClose" class="glyphicon glyphicon-remove"></span></div>
+
+<!-- this nav is replaced by nav.html -->
+    <nav th:include="nav :: nav" class="navbar navbar-inverse">
+
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-site-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-site-navbar-collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/imagebox">HOME</a></li>
+                    <li><a href="uploads">UPLOADS <b id="upCount">0</b></a></li>
+                    <li><a href="settings">SETTINGS</a></li>
+                    <li><a href="faqs">FAQs</a></li>
+                    <input type="button" id="shutdownBtn" class="btn btn-default" value="Shutdown"/>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+<div class="container-fluid container-sm-height">
+
+    <section class="row row-sm-height">
+
+        <div class="col-sm-3 col-sm-height">
+
+        </div>
+        <div class="col-sm-7 col-sm-height">
+
+        </div>
+
+        <div class="col-sm-2 col-sm-height">
+
+            <div class="upContainer" id="imagesDiv">
+                <p class="upImgHeader">Images</p>
+                <div class="upGlobalProps" id="target" data-role="drag-drop-container">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div id="uploadedDiv">
+    <p class="upHeader" style="padding-left: 5%;">Media Service</p><!--<span id="uploadedClose" class="glyphicon glyphicon-remove"></span>-->
+    <div id="uploadedImgDiv">
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script th:src="@{js/handlebars-v4.0.5.js}" src="../static/js/handlebars-v4.0.5.js"></script>
+<script th:src="@{js/index.js?v=2}" src="../static/js/index.js?v=2"></script>
+
+</body>
+</html>
